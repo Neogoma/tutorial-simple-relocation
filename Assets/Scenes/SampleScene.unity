@@ -517,7 +517,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 800843339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 958776951}
+        m_TargetAssemblyTypeName: com.Neogoma.Stardust.API.Relocation.MapRelocationManager,
+          Stardust
+        m_MethodName: LocateCurrentPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800843339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +709,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942c79d70961db648b1f8d08938a27af, type: 3}
+--- !u!114 &958776951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1035069907851283414, guid: 942c79d70961db648b1f8d08938a27af, type: 3}
+  m_PrefabInstance: {fileID: 958776950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 299082495, guid: 72102dcc4144b604591e875c9dd0570f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1365875931
 PrefabInstance:
   m_ObjectHideFlags: 0
