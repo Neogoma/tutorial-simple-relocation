@@ -1,5 +1,6 @@
 using com.Neogoma.Stardust.API.Relocation;
 using com.Neogoma.Stardust.Datamodel;
+using System;
 using UnityEngine;
 
 public class RelocationExample : MonoBehaviour
@@ -19,6 +20,13 @@ public class RelocationExample : MonoBehaviour
 
         //Start downloading the map
         MapRelocationManager.Instance.GetDataForMap(id);
+
+        MapRelocationManager.Instance.onPositionFound.AddListener(Tester);
+    }
+
+    private void Tester(RelocationResults arg0, CoordinateSystem arg1)
+    {
+        Debug.Log(arg0);
     }
 
     private void MapDownloaded(Session session, GameObject map)

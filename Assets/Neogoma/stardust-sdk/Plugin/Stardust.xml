@@ -912,6 +912,11 @@
         <member name="M:com.Neogoma.Stardust.API.StardustSDK.Awake">
             <inheritdoc/>
         </member>
+        <member name="M:com.Neogoma.Stardust.API.StardustSDK.SetStardustAPIToken(System.String)">
+            <summary>
+            Programatically sets the api token
+            </summary>
+        </member>
         <member name="M:com.Neogoma.Stardust.API.StardustSDK.IsLoggedIn">
             <summary>
             Knows if the stardust SDK has stored a token in cache for automatic login or not
