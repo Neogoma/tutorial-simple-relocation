@@ -653,6 +653,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1035069907851283414, guid: 942c79d70961db648b1f8d08938a27af, type: 3}
+      propertyPath: contentPrefab
+      value: 
+      objectReference: {fileID: 6088304132979679708, guid: b80427453f01afd469e4248053b12384, type: 3}
     - target: {fileID: 2984943813717090983, guid: 942c79d70961db648b1f8d08938a27af, type: 3}
       propertyPath: ApiKey
       value: 

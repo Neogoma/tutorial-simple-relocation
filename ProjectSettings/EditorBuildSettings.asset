@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Tutorial simple relocation.unity
+  - enabled: 0
+    path: Assets/Scenes/1-Cloud Content.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/2-Local content.unity
+    guid: be81e9dc247cd0640b08ce0d2470dd4c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 208bed204a39b7748ab5a0e2e9cbaee9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 54b2ab540930850408dd858106a704ca, type: 2}
