@@ -3,7 +3,7 @@ using com.Neogoma.Stardust.Datamodel;
 using System;
 using UnityEngine;
 
-public class RelocationExample : MonoBehaviour
+public class CloudContentRelocation : MonoBehaviour
 {
     public string id;
 

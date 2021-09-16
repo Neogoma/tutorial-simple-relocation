@@ -698,6 +698,11 @@
             Event triggered when the position has not been found
             </summary>
         </member>
+        <member name="F:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.onMaxRequestReached">
+            <summary>
+            Event triggered when the maximum of request has been reached
+            </summary>
+        </member>
         <member name="F:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.onPositionRequestFailed">
             <summary>
             Event triggered when the position request failed
@@ -755,6 +760,12 @@
             <summary>
             Requests to locate the current position
             </summary>
+        </member>
+        <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.LocateCurrentPosition(System.String)">
+            <summary>
+            Requests to locate the current position with map UUID in parameter
+            </summary>
+            <param name="uuid">UUID of the map to relocate on</param>
         </member>
         <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.SetTimeout(System.Single)">
             <summary>
@@ -814,24 +825,31 @@
             <param name="pictureDatas">the picture taken when click locate.</param>
             <param name="positionMatchedData">The position matched data.</param>
         </member>
-        <member name="T:com.Neogoma.Stardust.API.Relocation.PointCloudPositioner">
+        <member name="T:com.Neogoma.Stardust.API.Relocation.MapPositioner">
             <summary>
             Class used to position the map in the world according to received datas
             </summary>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Relocation.PointCloudPositioner.#ctor(com.Neogoma.Stardust.API.Persistence.ObjectController,UnityEngine.GameObject,UnityEngine.Material)">
+        <member name="M:com.Neogoma.Stardust.API.Relocation.MapPositioner.#ctor(com.Neogoma.Stardust.API.Persistence.ObjectController,UnityEngine.GameObject,UnityEngine.Material)">
             <summary>
             Default construction of the point cloud positioner
             </summary>
-            <param name="originPrefab"></param>
+            <param name="contentPrefab"></param>
             <param name="objectController"></param>
             <param name="mat"></param>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Relocation.PointCloudPositioner.GetMapObjectForSession(com.Neogoma.Stardust.Datamodel.Session)">
+        <member name="M:com.Neogoma.Stardust.API.Relocation.MapPositioner.GetMapObjectForSession(com.Neogoma.Stardust.Datamodel.Session)">
             <summary>
             Creates an instantiate the map according to sessions datas
             </summary>
             <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:com.Neogoma.Stardust.API.Relocation.MapPositioner.GetMapObjectForSession(System.String)">
+            <summary>
+            Instantiate the data with only
+            </summary>
+            <param name="uuid"></param>
             <returns></returns>
         </member>
         <member name="T:com.Neogoma.Stardust.API.SessionController">
@@ -1052,6 +1070,11 @@
             State returned by server
             </summary>
         </member>
+        <member name="F:com.Neogoma.Stardust.Datamodel.RelocationResults.max">
+            <summary>
+            Resutns the max status from server
+            </summary>
+        </member>
         <member name="F:com.Neogoma.Stardust.Datamodel.RelocationResults.q">
             <summary>
             Rotation returned by server
@@ -1065,6 +1088,11 @@
         <member name="P:com.Neogoma.Stardust.Datamodel.RelocationResults.PositionFound">
             <summary>
             True if position was found, false otherwise
+            </summary>
+        </member>
+        <member name="P:com.Neogoma.Stardust.Datamodel.RelocationResults.MaximumRequest">
+            <summary>
+            True if reached the maximum of requests
             </summary>
         </member>
         <member name="P:com.Neogoma.Stardust.Datamodel.RelocationResults.LocatedPosition">
