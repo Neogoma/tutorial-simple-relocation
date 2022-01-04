@@ -24,7 +24,7 @@ namespace com.Neogoma.Stardust.Bundle
         ///<inheritdoc/>
         protected override void ObjectLoadedSucessfully(GameObject obj)
         {
-            progressBg.SetActive(false);
+            progressBg.SetActive(false);            
         }
         ///<inheritdoc/>
         protected override void ObjectNotAvailable()
