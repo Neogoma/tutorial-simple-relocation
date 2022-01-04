@@ -215,6 +215,16 @@
             Event triggered when the latest data upload failed
             </summary>
         </member>
+        <member name="F:com.Neogoma.Stardust.API.Mapping.MapDataUploader.onBatchReadyToUpdate">
+            <summary>
+            Event triggered when the map is ready to update
+            </summary>
+        </member>
+        <member name="F:com.Neogoma.Stardust.API.Mapping.MapDataUploader.onBatchNotReady">
+            <summary>
+            Event triggered when the map can't update
+            </summary>
+        </member>
         <member name="F:com.Neogoma.Stardust.API.Mapping.MapDataUploader.onTargetCreatedSucessfully">
             <summary>
             Event triggered when a target was sucessfully created
@@ -268,6 +278,11 @@
         <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.Awake">
             <inheritdoc/>
         </member>
+        <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.SetUpdateBatch">
+            <summary>
+            Setup the update batch
+            </summary>
+        </member>
         <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.GetSupportedEvents">
             <inheritdoc/>
         </member>
@@ -296,7 +311,7 @@
             </summary>
             <param name="emailToNotify">Email to notify when map is ready</param>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:com.Neogoma.Stardust.API.Mapping.MapDataUploader.RequestSucess(System.String,System.String)">
@@ -385,7 +400,7 @@
             Returns the current model used by the displayer
             </summary>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.Initialize(com.Neogoma.HoboDream.Network.IBundleDownloader{System.String,com.Neogoma.HoboDream.Network.IBundleDownloadListener},com.Neogoma.HoboDream.Network.IOBJFilesDownloader{System.String,com.Neogoma.HoboDream.Network.IObjFilesDownloadListener},com.Neogoma.HoboDream.Network.IHTTPConnector{System.String,com.Neogoma.HoboDream.Network.IJSonRequestListener},com.Neogoma.Stardust.Datamodel.PersistentObject)">
+        <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.Initialize(com.Neogoma.HoboDream.Network.IBundleDownloader{com.Neogoma.HoboDream.Network.IBundleDownloadListener},com.Neogoma.HoboDream.Network.IOBJFilesDownloader{com.Neogoma.HoboDream.Network.IObjFilesDownloadListener},com.Neogoma.HoboDream.Network.IHTTPConnector{com.Neogoma.HoboDream.Network.IJSonRequestListener},com.Neogoma.Stardust.Datamodel.PersistentObject)">
             <summary>
             Initialize
             </summary>
@@ -419,7 +434,7 @@
         <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.RequestSucess(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:com.Neogoma.Stardust.API.Persistence.AbstractBundleDisplayer.ObjectFilesDownloaded(System.String,System.String)">
@@ -547,6 +562,13 @@
             Destroy all the objects in memory
             </summary>
         </member>
+        <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.HasView(com.Neogoma.Stardust.Datamodel.PersistentObject)">
+            <summary>
+            checks if a model has a view
+            </summary>
+            <param name="model">model to check</param>
+            <returns>True if the model has a view, false otherwise</returns>
+        </member>
         <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.CreateView(UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.String,com.Neogoma.Stardust.Datamodel.Bundle)">
             <summary>
             Instantiates a view with all datas necessary. The object will be created in map space only and will NOT be stored in the cloud
@@ -629,7 +651,7 @@
             <param name="parent">Parent of the newly created object (can be null)</param>
             <param name="space">In what <see cref="T:com.Neogoma.Stardust.API.Persistence.ObjectController.CreationSpace"/> are you giving the data</param>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.GetViewForMOdel(com.Neogoma.Stardust.Datamodel.PersistentObject)">
+        <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.GetViewForModel(com.Neogoma.Stardust.Datamodel.PersistentObject)">
             <summary>
             Returns the <see cref="T:UnityEngine.GameObject"></see> associated with the model
             </summary>
@@ -681,7 +703,7 @@
         <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.RequestSucess(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:com.Neogoma.Stardust.API.Persistence.ObjectController.BundleIsCached(System.String)">
@@ -828,7 +850,7 @@
         <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.RequestSucess(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:com.Neogoma.Stardust.API.Relocation.MapRelocationManager.RequestProgress(System.Single,System.String)">
@@ -955,7 +977,7 @@
         <member name="M:com.Neogoma.Stardust.API.SessionController.RequestSucess(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.SessionController.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.SessionController.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:com.Neogoma.Stardust.API.SessionController.SessionEvent">
@@ -1048,7 +1070,7 @@
         <member name="M:com.Neogoma.Stardust.API.StardustSDK.RequestSucess(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:com.Neogoma.Stardust.API.StardustSDK.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.API.StardustSDK.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:com.Neogoma.Stardust.API.CameraData.ColorExtractor">
@@ -1181,6 +1203,9 @@
             <param name="position">Update the position</param>
             <param name="rotation">Update the rotation</param>
             <param name="scale">Update the scale</param>
+        </member>
+        <member name="M:com.Neogoma.Stardust.Datamodel.PersistentObject.Equals(System.Object)">
+            <inheritdoc/>
         </member>
         <member name="P:com.Neogoma.Stardust.Datamodel.PersistentObject.Position">
             <summary>
@@ -1401,7 +1426,7 @@
             </summary>
             <param name="renderer">New renderer to use</param>
         </member>
-        <member name="M:com.Neogoma.Stardust.Navigation.PathFindingManager.RequestFailed(System.String,System.String)">
+        <member name="M:com.Neogoma.Stardust.Navigation.PathFindingManager.RequestFailed(System.Int64,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:com.Neogoma.Stardust.Navigation.NavigationReady">
