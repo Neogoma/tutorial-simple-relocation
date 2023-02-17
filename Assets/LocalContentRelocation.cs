@@ -15,6 +15,7 @@ public class LocalContentRelocation : MonoBehaviour
     private void PositionFound(RelocationResults arg0, CoordinateSystem arg1)
     {
         Debug.Log("POSITION FOUND");
+        Handheld.Vibrate();
     }
 
     public void Relocate()
